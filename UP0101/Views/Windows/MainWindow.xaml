@@ -1,12 +1,18 @@
 ﻿<Window x:Class="UP0101.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UP0101"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:vm="clr-namespace:UP0101.ViewModels"
+        xmlns:l="clr-namespace:UP0101"
+        Title="{Binding Title}" 
+        Width="800" Height="450" >
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <TextBox Margin="36,30,375,387" 
+                 Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" 
+                 TextWrapping="Wrap"/>
     </Grid>
 </Window>
